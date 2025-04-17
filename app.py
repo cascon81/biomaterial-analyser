@@ -1,83 +1,67 @@
 import streamlit as st
+from PIL import Image
+import torch
 
-# Configurações da página
-st.set_page_config(
-    page_title="Biomaterial Analyzer",
-    layout="wide",
-)
+# Função para carregar o modelo YOLO (substitua com o código de carregamento adequado)
+@st.cache_resource
+def load_model(model_name):
+    # Carrega o modelo YOLO treinado correspondente ao teste selecionado
+    model_path = f"models/{model_name}.pt"
+    model = torch.hub.load('ultralytics/yolov5', 'custom', path=model_path)
+    return model
 
-# ===== Título =====
-st.title("🧪 Biomaterial Analyzer")
-st.markdown("""
-Este sistema utiliza **modelos treinados com YOLO** para analisar imagens de biomateriais impressos em 3D.  
-Você pode escolher entre diferentes tipos de análise e receber uma avaliação automática do material analisado.
+# Função para realizar a análise da imagem (substitua com a lógica de inferência do modelo)
+def analyze_image(model, image):
+    # Realiza a análise no modelo e retorna os resultados
+    results = model(image)
+    return results
 
-📌 **Os modelos foram treinados com os seguintes materiais**:
-- Alginate
-- Alginate + CaCl₂
-- GelMA
-- Nivea
-- Pluronic F-127
-
-⚠️ Portanto, os resultados são mais confiáveis com esses materiais ou com materiais com **comportamento semelhante**, como **acetato de celulose**.
+# Título e descrição da aplicação
+st.title("Classificador de Biomateriais")
+st.write("""
+Esta aplicação web permite a análise de biomateriais impressos em 3D. Utilizamos modelos YOLO treinados para classificar imagens de biomateriais com base em diferentes testes:
+- **Uniformidade do Filamento**
+- **Fusão dos Filamentos**
+- **Printabilidade**
 """)
 
-st.divider()
+# Exibição de informações sobre os biomateriais
+with st.expander("Sobre os Biomateriais e os Testes"):
+    st.write("""
+    Os modelos YOLO foram treinados com os seguintes biomateriais:
+    - **Alginate**
+    - **Alginate + CaCl2**
+    - **GelMA**
+    - **Pluronic F-127**
 
-# ===== Análise rápida =====
-col1, col2 = st.columns([1.2, 1])
+    Esses modelos podem ser usados para materiais com comportamentos semelhantes, como acetato de celulose.
+    """)
 
-with col1:
-    st.subheader("🔍 Selecione o tipo de análise")
+# Carregar a imagem
+st.header("Faça o Upload de uma Imagem")
+uploaded_file = st.file_uploader("Escolha uma imagem de biomaterial", type=["jpg", "png", "jpeg"])
 
-    analysis_type = st.radio(
-        "Tipo de teste:",
-        options=[
-            "Filament Uniformity Test",
-            "Filament Fusion Test",
-            "Printability"
-        ],
-        index=0,
-        horizontal=True,
-    )
+# Seleção do tipo de análise
+analysis_option = st.selectbox("Escolha o tipo de análise", ["Filament Uniformity Test", "Filament Fusion Test", "Printability Test"])
 
-    if st.button("▶️ Rodar Análise"):
-        st.success(f"✅ {analysis_type} finalizado com sucesso.")
-        st.markdown("🔄 *Integração com o modelo YOLO em breve.*")
-
-with col2:
-    st.subheader("📁 Upload (em breve)")
-    st.info("A função de upload será ativada na próxima versão. Aguarde!")
-
-st.divider()
-
-# ===== Detalhes técnicos =====
-with st.expander("ℹ️ Mais informações sobre os testes"):
-    st.markdown("""
-### 📌 Descrição dos testes:
-
-#### 🧵 Filament Uniformity Test
-Avalia se os filamentos impressos possuem **largura uniforme**, indicando consistência do fluxo e precisão da extrusão.
-
-#### 🔗 Filament Fusion Test
-Detecta a **aderência entre camadas**, verificando se a fusão entre filamentos consecutivos está adequada para manter a integridade estrutural.
-
-#### 🖨️ Printability
-Verifica se o material apresenta **defeitos visuais ou estruturais** que comprometam a qualidade da impressão, como buracos, deslocamentos ou falhas na camada base.
-
----
-
-### 🎯 Sobre os modelos
-Cada tipo de teste utiliza um modelo **YOLO treinado especificamente** para aquela tarefa.  
-Os modelos foram treinados com imagens rotuladas de biomateriais típicos usados em bioimpressão 3D.
-
-### 🧪 Materiais usados no treinamento:
-- **Alginate**
-- **Alginate + CaCl₂**
-- **GelMA**
-- **Nivea (como controle de textura/padrão)**
-- **Pluronic F-127**
-
-Estes materiais cobrem uma variedade de **comportamentos reológicos e padrões de impressão** observados em biofabricação.
-""")
-
+# Botão para iniciar a análise
+if uploaded_file is not None:
+    # Exibe a imagem carregada
+    image = Image.open(uploaded_file)
+    st.image(image, caption="Imagem carregada", use_column_width=True)
+    
+    # Carregar o modelo adequado com base na análise selecionada
+    if analysis_option == "Filament Uniformity Test":
+        model = load_model("uniformity_yolo")
+    elif analysis_option == "Filament Fusion Test":
+        model = load_model("fusion_yolo")
+    else:
+        model = load_model("printability_yolo")
+    
+    # Processamento da imagem e exibição dos resultados
+    if st.button("Analisar Imagem"):
+        st.write("Processando a imagem...")
+        results = analyze_image(model, image)
+        st.write("Resultados da análise:")
+        st.write(results.pandas().xywh)  # Exibe os resultados da detecção em formato pandas
+        st.image(results.render()[0], caption="Resultado da análise", use_column_width=True)
