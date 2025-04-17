@@ -9,7 +9,6 @@ st.title("🧪 Analisador de Amostras Impressas")
 
 st.markdown("""
 ### Escolha o tipo de teste que deseja realizar:
-Cada teste requer uma amostra com características visuais específicas.
 """)
 
 # Menu de seleção de teste
