@@ -10,7 +10,7 @@ Este projeto fornece uma aplicação web interativa para classificar imagens de 
 
 Clique no link abaixo para acessar:
 
-[**Acessar BioPrint Analyser**](https://biomaterial-classifier.streamlit.app/)
+[**Acessar biomaterial-analyser**](https://biomaterial-classifier.streamlit.app/)
 
 2. **Envie sua imagem**:
 
