@@ -1,70 +1,51 @@
 # Classificador de Biomateriais com Streamlit e TensorFlow
 
-Este projeto é uma aplicação web interativa desenvolvida com Streamlit, destinada à classificação automática de imagens de biomateriais utilizando um modelo de aprendizado profundo treinado com TensorFlow/Keras.
+Este projeto oferece uma aplicação web interativa desenvolvida com **Streamlit**, que permite a **classificação de imagens de biomateriais** utilizando um modelo treinado com **TensorFlow/Keras**. A ferramenta pode ser acessada diretamente na web, sem necessidade de instalação local.
 
-A aplicação permite o envio de imagens via navegador, processa essas imagens e exibe o resultado da previsão com base em um modelo `.h5` previamente treinado.
+---
 
-## Estrutura do Projeto
+## 🌐 Como usar online (Streamlit Cloud)
 
-```
-biomaterial-classifier/
-│
-├── app.py                  # Aplicação principal em Streamlit
-├── modelo_biomaterial.h5   # Modelo treinado (arquivo gerado com TensorFlow/Keras)
-├── requirements.txt        # Lista de dependências Python
-└── README.md               # Este arquivo de instruções
-```
+Siga estas etapas para usar a aplicação diretamente na web:
 
-## Pré-requisitos
+### 1. Acesse a aplicação online:
 
-- Python 3.8 ou superior
-- streamlit, tensorflow, numpy, Pillow (instalados via requirements.txt)
-- Um modelo Keras salvo no formato .h5 (ver detalhes abaixo)
+Clique no link abaixo para acessar a aplicação hospedada no **Streamlit Cloud**:
 
-## Instruções para uso local
+[**Acessar Classificador de Biomateriais**](https://share.streamlit.io/seu-usuario/biomaterial-classifier/main/app.py)
 
-1. Clone este repositório ou baixe os arquivos:
-   ```bash
-   git clone https://github.com/seu-usuario/biomaterial-classifier.git
-   cd biomaterial-classifier
-   ```
+### 2. Envie sua imagem:
 
-2. Instale as dependências:
-   ```bash
-   pip install -r requirements.txt
-   ```
+No site, você pode **fazer o upload de uma imagem** de biomaterial (em formatos JPG, PNG ou JPEG). O modelo realizará a classificação automaticamente, exibindo o resultado na tela.
 
-3. Adicione o seu modelo `.h5` com o nome `modelo_biomaterial.h5` na mesma pasta do arquivo `app.py`.
+---
 
-4. Execute a aplicação:
-   ```bash
-   streamlit run app.py
-   ```
+## 🍴 Como testar o modelo sozinho
 
-## Instruções para uso na nuvem (Streamlit Cloud)
+Se você quiser testar o modelo em seu próprio Streamlit, ou fazer ajustes, você pode **fazer um fork** do repositório. O fork permite que você tenha sua própria cópia do projeto e possa modificá-lo para suas necessidades. Para isso, siga os passos:
 
-1. Crie um repositório no GitHub com os arquivos:
-   - app.py
-   - modelo_biomaterial.h5
-   - requirements.txt
-   - README.md
+### 1. Clique em **Fork** no canto superior direito da página do repositório.
+### 2. Clone o repositório para sua máquina e rode a aplicação localmente, ou faça o deploy no **Streamlit Cloud**.
 
-2. Acesse: https://streamlit.io/cloud
+Isso permitirá que você utilize o modelo de classificação em suas próprias imagens e, se necessário, substitua o modelo `.h5` por outro treinado para diferentes tipos de biomateriais.
 
-3. Conecte sua conta do GitHub e selecione o repositório.
+---
 
-4. Defina:
-   - Arquivo principal: app.py
-   - Branch principal: main
+## 🤖 Sobre o modelo `.h5`
 
-5. Clique em "Deploy" e aguarde a instalação e execução automática.
+O modelo que acompanha o projeto foi treinado com **TensorFlow/Keras** para classificar imagens de biomateriais. O modelo `.h5` espera imagens com o formato **128x128 pixels** e 3 canais (RGB). O modelo foi treinado para **classificação binária** (por exemplo, "biomaterial A" vs "biomaterial B"), mas pode ser facilmente adaptado para outras tarefas de classificação.
 
-## Sobre o arquivo modelo_biomaterial.h5
+### Adaptando para outros materiais
 
-Este arquivo é um modelo de deep learning treinado com TensorFlow/Keras. Ele deve:
+Caso você queira usar o modelo para classificar outros tipos de biomateriais, basta treinar um novo modelo com imagens do material desejado e salvar o modelo treinado no formato `.h5`. Substitua o arquivo `modelo_biomaterial.h5` pelo novo modelo e faça o upload das imagens correspondentes. O código da aplicação vai utilizar o novo modelo para a classificação automaticamente.
 
-- Aceitar como entrada uma imagem com shape (128, 128, 3)
-- Estar salvo usando model.save('modelo_biomaterial.h5')
-- Ter uma camada de saída compatível com seu problema:
-  - Classificação binária: Dense(1, activation='sigmoid')
-  - Classificação multi-classe: Dense(n_classes, activation='softmax')
+---
+
+## 💡 Como treinar seu próprio modelo `.h5`
+
+Se você deseja treinar um modelo para outro tipo de material, siga estas etapas:
+
+1. Treine um modelo de classificação de imagens com **TensorFlow/Keras**.
+2. Salve o modelo treinado com:
+   ```python
+   model.save("modelo_biomaterial.h5")
