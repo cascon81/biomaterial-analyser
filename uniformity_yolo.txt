@@ -1,0 +1,1 @@
+Este é um placeholder para o modelo uniformity_yolo.pt
