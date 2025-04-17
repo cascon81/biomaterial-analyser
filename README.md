@@ -1,4 +1,4 @@
-# Classificador de Biomateriais com YOLO e Streamlit
+# Classificador de Biomateriais
 
 Este projeto fornece uma aplicação web interativa para classificar imagens de biomateriais utilizando modelos YOLO treinados. O classificador é acessível diretamente via **Streamlit** e **Vercel**, permitindo a análise de biomateriais impressos em 3D para testes como **uniformidade do filamento**, **fusão dos filamentos** e **printabilidade**.
 
