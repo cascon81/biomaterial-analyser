@@ -12,7 +12,7 @@ Siga estas etapas para usar a aplicação diretamente na web:
 
 Clique no link abaixo para acessar a aplicação hospedada no **Streamlit Cloud**:
 
-[**Acessar Classificador de Biomateriais**]([https://share.streamlit.io/seu-usuario/biomaterial-classifier/main/app.py](https://biomaterial-classifier.streamlit.app/))
+[**Acessar Classificador de Biomateriais**](https://biomaterial-classifier.streamlit.app/)
 
 ### 2. Envie sua imagem:
 
