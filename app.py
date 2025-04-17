@@ -1,18 +1,28 @@
 import streamlit as st
-import tensorflow as tf
-from PIL import Image
-import numpy as np
 
-st.title("Classificador de Biomateriais")
+# Configuração da página
+st.set_page_config(page_title="Biomaterial Analyzer (Beta)", layout="centered")
+st.title("🧪 Biomaterial Analyzer (Beta)")
+st.markdown("Interface inicial para análise de biomateriais. Selecione uma análise e clique no botão para simular os resultados.")
 
-uploaded_file = st.file_uploader("Envie uma imagem", type=["jpg", "jpeg", "png"])
-if uploaded_file:
-    image = Image.open(uploaded_file).resize((128, 128))
-    st.image(image, caption="Imagem carregada", use_column_width=True)
+# Seletor de tipo de análise
+st.subheader("⚙️ Escolha a Análise")
+analysis_type = st.radio(
+    "Selecione o teste a ser executado:",
+    options=[
+        "Filament Uniformity Test",
+        "Filament Fusion Test",
+        "Printability"
+    ]
+)
 
-    model = tf.keras.models.load_model("modelo_biomaterial.h5")
-    img_array = np.array(image) / 255.0
-    img_array = np.expand_dims(img_array, axis=0)
+# Botão para rodar análise
+if st.button("🔍 Rodar Análise"):
+    st.subheader("🔎 Resultado da Análise")
 
-    prediction = model.predict(img_array)
-    st.write(f"Resultado da predição: {prediction}")
+    if analysis_type == "Filament Uniformity Test":
+        st.success("✅ Uniformidade: Alta. Filamentos com largura consistente ao longo da estrutura.")
+    elif analysis_type == "Filament Fusion Test":
+        st.success("✅ Fusão: Adequada. Boa aderência entre camadas detectada.")
+    elif analysis_type == "Printability":
+        st.success("✅ Printabilidade: Excelente. Estrutura bem definida, sem falhas visíveis.")
