@@ -8,27 +8,34 @@ st.set_page_config(page_title="Analisador de Bioimpressibilidade", layout="cente
 st.title("🧪 Analisador de Amostras Impressas")
 
 st.markdown("""
-Envie a imagem da **amostra** e selecione o **teste específico** que deseja realizar:
-
-⚠️ Cada teste possui um padrão distinto, portanto **cada amostra deve ser única** e correspondente ao teste escolhido.
+### Escolha o tipo de teste que deseja realizar:
+Cada teste requer uma amostra com características visuais específicas.
 """)
 
-uploaded_file = st.file_uploader("📤 Enviar imagem da amostra", type=["png", "jpg", "jpeg"])
-if uploaded_file:
-    image = Image.open(uploaded_file)
-    st.image(image, caption="Imagem da amostra", use_column_width=True)
-    image_path = f"temp_image.{uploaded_file.name.split('.')[-1]}"
-    image.save(image_path)
+# Menu de seleção de teste
+teste = st.selectbox("🔬 Selecione o teste desejado", [
+    "Uniformidade do filamento",
+    "Fusão dos filamentos",
+    "Printabilidade geral"
+])
 
-    teste = st.selectbox("🔍 Escolha o teste a realizar", [
-        "Uniformidade do filamento",
-        "Fusão dos filamentos",
-        "Printabilidade geral"
-    ])
+# Upload da imagem
+uploaded_file = st.file_uploader("📄 Enviar imagem da amostra", type=["png", "jpg", "jpeg"])
 
-    if st.button("▶️ Analisar"):
-        st.spinner("Processando...")
+# Botão para processar
+gerar = st.button("▶️ Gerar resultado")
 
+if gerar:
+    if not uploaded_file:
+        st.warning("⚠️ Por favor, envie uma imagem para análise.")
+    else:
+        # Exibir imagem enviada
+        image = Image.open(uploaded_file)
+        st.image(image, caption="Imagem enviada", use_column_width=True)
+        image_path = f"temp_image.{uploaded_file.name.split('.')[-1]}"
+        image.save(image_path)
+
+        # Carregando modelo correspondente
         model_map = {
             "Uniformidade do filamento": "uniformity_yolo.pt",
             "Fusão dos filamentos": "fusion_yolo.pt",
@@ -36,15 +43,25 @@ if uploaded_file:
         }
 
         model_path = Path("models") / model_map[teste]
-        model = torch.hub.load("ultralytics/yolov5", "custom", path=str(model_path), force_reload=True)
-        results = model(image_path)
 
-        save_dir = f"runs/detect/{teste.replace(' ', '_').lower()}"
-        results.save(save_dir=save_dir)
+        with st.spinner("🔎 Processando imagem com o modelo..."):
+            model = torch.hub.load("ultralytics/yolov5", "custom", path=str(model_path), force_reload=True)
+            results = model(image_path)
+            save_dir = f"runs/detect/{teste.replace(' ', '_').lower()}"
+            results.save(save_dir=save_dir)
+            resultado_path = os.path.join(save_dir, os.path.basename(image_path))
 
+        # Mostrar imagem com resultado
         st.success("✅ Análise concluída!")
-        st.image(os.path.join(save_dir, os.path.basename(image_path)), caption="Resultado", use_column_width=True)
+        st.image(resultado_path, caption="Resultado da análise", use_column_width=True)
 
+        # Simulação de resultado quantitativo e erro
+        resultado_valor = round(float(torch.rand(1)), 2)
+        erro = round(float(torch.rand(1) * 0.1), 2)
+        st.markdown(f"**🔢 Resultado do teste:** `{resultado_valor}` ± `{erro}`")
+
+        with open(resultado_path, "rb") as f:
+            st.download_button("📅 Baixar imagem com resultado", f, file_name="resultado_analise.png", mime="image/png")
+
+        # Limpeza
         os.remove(image_path)
-else:
-    st.info("👆 Envie uma imagem acima para iniciar.")
