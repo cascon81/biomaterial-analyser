@@ -1,46 +1,53 @@
-# biomaterial-analyser
+# 🧪 Biomaterial Analyser
 
-Este projeto fornece uma aplicação web interativa para classificar imagens de biomateriais utilizando modelos YOLO treinados. O classificador é acessível diretamente via **Streamlit** e **Vercel**, permitindo a análise de biomateriais impressos em 3D para testes como **uniformidade do filamento**, **fusão dos filamentos** e **printabilidade**.
-
----
-
-## 🚀 Como usar online
-
-1. **Acesse a aplicação online**:
-
-Clique no link abaixo para acessar:
-
-[**Acessar biomaterial-analyser**](https://biomaterial-classifier.streamlit.app/)
-
-2. **Envie sua imagem**:
-
-No site, você pode **fazer o upload de uma imagem** de biomaterial (em formatos JPG, PNG ou JPEG). O modelo realizará a classificação automaticamente, exibindo o resultado na tela.
+Este projeto fornece um sistema de **análise automática de imagens de biomateriais impressos em 3D** utilizando **modelos de regressão treinados com TensorFlow/Keras**. O sistema é executado via **Google Colab**, com interface simples e intuitiva para carregar imagens e obter resultados.
 
 ---
 
-## 🧠 Modelos Treinados
+## ✅ O que o sistema analisa?
 
-- **Filament Uniformity Test**: Uniformidade do filamento.
-- **Filament Fusion Test**: Fusão dos filamentos.
-- **Printability Test**: Avaliação da impressão do material.
+Três tipos de análises estão disponíveis, cada uma com seu próprio modelo `.h5`:
 
-Os modelos YOLO foram treinados com os seguintes biomateriais:
+- **Uniformidade do filamento**  
+- **Fusão entre filamentos**  
+- **Printabilidade geral**
 
-- Alginate
-- Alginate + CaCl2
-- GelMA
-- Pluronic F-127
-
-Esses modelos podem ser utilizados para materiais com comportamentos semelhantes, como acetato de celulose.
+Cada análise utiliza uma **geometria de amostra específica** com GCode dedicado, projetada para destacar as características visuais mais relevantes de cada métrica.
 
 ---
 
-📐 Cada teste requer uma **amostra física com formato específico**, projetada para evidenciar as características visuais que o modelo deve analisar. Por isso, **cada teste deve ser feito com uma peça diferente**, impressa com base em um design otimizado para aquele tipo de avaliação. Abaixo estão os modelos utilizados em cada teste, com links para baixar o arquivo GCODE correspondente:
+## 🧠 Modelos Treinados (TensorFlow/Keras)
 
-- [Amostra de Uniformidade](https://drive.google.com/your-uniformity-link) 
-- [Amostra de Fusão](https://drive.google.com/your-fusion-link)
-- [Amostra de Printabilidade](https://drive.google.com/your-printability-link)
+Os modelos foram treinados usando imagens rotuladas manualmente com valores contínuos (regressão), retornando **valores entre 0.0 e 1.0** para cada métrica.
 
-Você pode baixar e imprimir essas amostras com sua bioimpressora antes de realizar a análise com a aplicação.
+- [Uniformidade do filamento – Download modelo `.h5`](https://drive.google.com/...)  
+- [Fusão entre filamentos – Download modelo `.h5`](https://drive.google.com/...)  
+- [Printabilidade geral – Download modelo `.h5`](https://drive.google.com/file/d/1RcS2LCAAKrUpp4An5tR5Z0VFSuYrJcdr/view?usp=drive_link)
 
+---
 
+## 📐 GCodes de Teste
+
+Para garantir a análise correta, utilize as amostras de teste correspondentes a cada modelo:
+
+- [Amostra de Uniformidade – GCODE](https://drive.google.com/...)  
+- [Amostra de Fusão – GCODE](https://drive.google.com/...)  
+- [Amostra de Printabilidade – GCODE](https://drive.google.com/...)
+
+Essas geometrias foram projetadas para evidenciar visualmente as métricas que os modelos analisam.
+
+---
+
+## 💻 Executar no Google Colab
+
+Abra e execute diretamente no Colab com o link abaixo:
+
+- [Uniformidade do filamento – Abrir no Colab`](https://drive.google.com/...)  
+- [Fusão entre filamentos – Abrir no Colab`](https://drive.google.com/...)  
+- [Printabilidade geral – Abrir no Colab](https://drive.google.com/file/d/1RcS2LCAAKrUpp4An5tR5Z0VFSuYrJcdr/view?usp=drive_link)
+
+O notebook permite:
+- Fazer o upload da imagem da amostra
+- Executar a predição
+
+---
