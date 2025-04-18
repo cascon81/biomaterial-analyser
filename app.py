@@ -1,79 +1,40 @@
 import streamlit as st
+from tensorflow.keras.models import load_model
 from PIL import Image
-import torch
+import numpy as np
 import os
-import gdown  # Para fazer o download do modelo do Google Drive
-from pathlib import Path
+import gdown
 
-# Configuração da página
-st.set_page_config(page_title="Analisador de Bioimpressibilidade", layout="centered")
-st.title("🧪 Analisador de Amostras Impressas")
+st.set_page_config(page_title="Analisador de Printabilidade", layout="centered")
+st.title("🧪 Analisador de Printabilidade (.h5)")
 
-# Instruções
-st.markdown("""
-### Escolha o tipo de teste que deseja realizar:
-""")
+# Verifica se o modelo já foi baixado, senão baixa do Google Drive
+MODEL_PATH = "modelo_printabilidade.h5"
+if not os.path.exists(MODEL_PATH):
+    with st.spinner("⬇️ Baixando modelo de printabilidade..."):
+        gdown.download(
+            "https://drive.google.com/uc?id=1RcS2LCAAKrUpp4An5tR5Z0VFSuYrJcdr",
+            MODEL_PATH,
+            quiet=False,
+        )
 
-# Menu de seleção
-teste = st.selectbox("🔬 Selecione o teste desejado", [
-    "Uniformidade do filamento",
-    "Fusão dos filamentos",
-    "Printabilidade geral"
-])
+# Carrega o modelo
+model = load_model(MODEL_PATH)
 
 # Upload da imagem
-uploaded_file = st.file_uploader("📄 Enviar imagem da amostra", type=["png", "jpg", "jpeg"])
+uploaded_file = st.file_uploader("📷 Envie a imagem da amostra", type=["jpg", "jpeg", "png"])
+if uploaded_file:
+    image = Image.open(uploaded_file).convert("RGB")
+    st.image(image, caption="Imagem enviada", use_column_width=True)
 
-# Botão de gerar
-gerar = st.button("▶️ Gerar resultado")
+    # Pré-processamento da imagem
+    img_resized = image.resize((224, 224))  # ajuste conforme sua rede
+    img_array = np.array(img_resized) / 255.0
+    img_batch = np.expand_dims(img_array, axis=0)
 
-# Função para baixar o modelo do Google Drive
-def baixar_modelo_google_drive():
-    url = 'https://drive.google.com/uc?export=download&id=1RcS2LCAAKrUpp4An5tR5Z0VFSuYrJcdr'  # ID do modelo no Google Drive
-    output = 'modelo_printabilidade.h5'
-    gdown.download(url, output, quiet=False)
-    return output
-
-# Ação ao clicar no botão
-if gerar:
-    if not uploaded_file:
-        st.warning("⚠️ Por favor, envie uma imagem para análise.")
-    else:
-        # Exibir imagem enviada
-        image = Image.open(uploaded_file)
-        st.image(image, caption="Imagem enviada", use_column_width=True)
-
-        # Salvar temporariamente
-        image_ext = uploaded_file.name.split('.')[-1]
-        image_path = f"temp_image.{image_ext}"
-        image.save(image_path)
-
-        # Baixar o modelo
-        with st.spinner("🔎 Baixando e carregando o modelo..."):
-            modelo_path = baixar_modelo_google_drive()
-
-        # Processar imagem
-        with st.spinner("🔎 Processando imagem com o modelo..."):
-            model = torch.hub.load("ultralytics/yolov5", "custom", path=modelo_path, force_reload=True)
-            results = model(image_path)
-
-            save_dir = f"runs/detect/{teste.replace(' ', '_').lower()}"
-            results.save(save_dir=save_dir)
-
-            resultado_path = os.path.join(save_dir, os.path.basename(image_path))
-
-        # Exibir resultado
-        st.success("✅ Análise concluída!")
-        st.image(resultado_path, caption="Resultado da análise", use_column_width=True)
-
-        # Simular valor e erro
-        resultado_valor = round(float(torch.rand(1)), 2)
-        erro = round(float(torch.rand(1) * 0.1), 2)
-        st.markdown(f"**🔢 Resultado do teste:** `{resultado_valor}` ± `{erro}`")
-
-        # Botão para baixar
-        with open(resultado_path, "rb") as f:
-            st.download_button("📅 Baixar imagem com resultado", f, file_name="resultado_analise.png", mime="image/png")
-
-        # Limpar imagem temporária
-        os.remove(image_path)
+    # Predição
+    if st.button("▶️ Analisar"):
+        with st.spinner("🔎 Processando imagem..."):
+            prediction = model.predict(img_batch)[0][0]
+            st.success("✅ Análise concluída!")
+            st.markdown(f"**Resultado da printabilidade:** `{prediction:.2f}`")
