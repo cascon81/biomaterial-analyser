@@ -16,9 +16,11 @@ Cada análise utiliza uma **geometria de amostra específica** com GCode dedicad
 
 ---
 
+
+
 ## 🧠 Modelos Treinados (TensorFlow/Keras)
 
-Os modelos foram treinados usando imagens rotuladas manualmente com valores contínuos (regressão), retornando **valores entre 0.0 e 1.0** para cada métrica.
+Os modelos foram treinados usando imagens rotuladas com valores contínuos (regressão).
 
 - [Uniformidade do filamento – Download modelo `.h5`](https://drive.google.com/...)  
 - [Fusão entre filamentos – Download modelo `.h5`](https://drive.google.com/...)  
@@ -44,7 +46,7 @@ Abra e execute diretamente no Colab com o link abaixo:
 - [Fusão entre filamentos – Abrir no Colab`](https://drive.google.com/...)  
 - [Printabilidade geral – Abrir no Colab](https://drive.google.com/file/d/1RcS2LCAAKrUpp4An5tR5Z0VFSuYrJcdr/view?usp=drive_link)
 
-O notebook permite:
+Permite:
 - Fazer o upload da imagem da amostra
 - Executar a predição
 
