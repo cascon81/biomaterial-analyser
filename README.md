@@ -24,7 +24,6 @@ Os modelos foram treinados usando imagens rotuladas manualmente com valores cont
 - [Fusão entre filamentos – Download modelo `.h5`](https://drive.google.com/...)  
 - [Printabilidade geral – Download modelo `.h5`](https://drive.google.com/file/d/1RcS2LCAAKrUpp4An5tR5Z0VFSuYrJcdr/view?usp=drive_link)
 
----
 
 ## 📐 GCodes de Teste
 
@@ -36,7 +35,6 @@ Para garantir a análise correta, utilize as amostras de teste correspondentes a
 
 Essas geometrias foram projetadas para evidenciar visualmente as métricas que os modelos analisam.
 
----
 
 ## 💻 Executar no Google Colab
 
@@ -50,4 +48,3 @@ O notebook permite:
 - Fazer o upload da imagem da amostra
 - Executar a predição
 
----
