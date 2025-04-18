@@ -2,6 +2,7 @@ import streamlit as st
 from PIL import Image
 import torch
 import os
+import gdown  # Para fazer o download do modelo do Google Drive
 from pathlib import Path
 
 # Configuração da página
@@ -26,6 +27,13 @@ uploaded_file = st.file_uploader("📄 Enviar imagem da amostra", type=["png", "
 # Botão de gerar
 gerar = st.button("▶️ Gerar resultado")
 
+# Função para baixar o modelo do Google Drive
+def baixar_modelo_google_drive():
+    url = 'https://drive.google.com/uc?export=download&id=1RcS2LCAAKrUpp4An5tR5Z0VFSuYrJcdr'  # ID do modelo no Google Drive
+    output = 'modelo_printabilidade.h5'
+    gdown.download(url, output, quiet=False)
+    return output
+
 # Ação ao clicar no botão
 if gerar:
     if not uploaded_file:
@@ -40,17 +48,13 @@ if gerar:
         image_path = f"temp_image.{image_ext}"
         image.save(image_path)
 
-        # Seleção do modelo
-        model_map = {
-            "Uniformidade do filamento": "uniformity_yolo.pt",
-            "Fusão dos filamentos": "fusion_yolo.pt",
-            "Printabilidade geral": "printability_yolo.pt"
-        }
-        model_path = Path("models") / model_map[teste]
+        # Baixar o modelo
+        with st.spinner("🔎 Baixando e carregando o modelo..."):
+            modelo_path = baixar_modelo_google_drive()
 
         # Processar imagem
         with st.spinner("🔎 Processando imagem com o modelo..."):
-            model = torch.hub.load("ultralytics/yolov5", "custom", path=str(model_path), force_reload=True)
+            model = torch.hub.load("ultralytics/yolov5", "custom", path=modelo_path, force_reload=True)
             results = model(image_path)
 
             save_dir = f"runs/detect/{teste.replace(' ', '_').lower()}"
