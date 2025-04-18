@@ -42,8 +42,8 @@ Essas geometrias foram projetadas para evidenciar visualmente as métricas que o
 
 Abra e execute diretamente no Colab com o link abaixo:
 
-- [Uniformidade do filamento – Abrir no Colab`](https://drive.google.com/...)  
-- [Fusão entre filamentos – Abrir no Colab`](https://drive.google.com/...)  
+- [Uniformidade do filamento – Abrir no Colab](https://drive.google.com/...)  
+- [Fusão entre filamentos – Abrir no Colab](https://drive.google.com/...)  
 - [Printabilidade geral – Abrir no Colab](https://drive.google.com/file/d/1RcS2LCAAKrUpp4An5tR5Z0VFSuYrJcdr/view?usp=drive_link)
 
 Permite:
