@@ -1,1 +1,0 @@
-Este é um placeholder para o modelo printability_yolo.pt

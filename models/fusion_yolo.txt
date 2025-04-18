@@ -1,1 +1,0 @@
-Este é um placeholder para o modelo fusion_yolo.pt
