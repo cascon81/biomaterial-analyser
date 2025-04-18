@@ -38,7 +38,6 @@ Para garantir a análise correta, utilize as amostras de teste correspondentes a
 
 Essas geometrias foram projetadas para evidenciar visualmente as métricas que os modelos analisam.
 
----
 
 ## 🧠 Modelos Treinados (TensorFlow/Keras)
 
