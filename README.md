@@ -14,10 +14,6 @@ Três tipos de análises estão disponíveis, cada uma com seu próprio modelo `
 
 Cada análise utiliza uma **geometria de amostra específica** com GCode dedicado, projetada para destacar as características visuais mais relevantes de cada métrica.
 
----
-
-
-
 
 ## 💻 Executar no Google Colab
 
