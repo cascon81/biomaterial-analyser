@@ -43,8 +43,8 @@ Essas geometrias foram projetadas para evidenciar visualmente as métricas que o
 
 Os modelos foram treinados usando imagens rotuladas com valores contínuos (regressão).
 
-- [Uniformidade do filamento – Download modelo `.h5`](https://drive.google.com/...)  
-- [Fusão entre filamentos – Download modelo `.h5`](https://drive.google.com/...)  
-- [Printabilidade geral – Download modelo `.h5`](https://drive.google.com/drive/folders/1cFIDD61-nRLunhnHf91oDYkNiv9yHJ5a?usp=sharing)
+- [Uniformidade do filamento – Download modelo `.keras`](https://drive.google.com/...)  
+- [Fusão entre filamentos – Download modelo `.keras`](https://drive.google.com/...)  
+- [Printabilidade geral – Download modelo `.keras`](https://drive.google.com/drive/folders/1cFIDD61-nRLunhnHf91oDYkNiv9yHJ5a?usp=sharing)
 
 
