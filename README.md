@@ -21,7 +21,7 @@ Abra e execute diretamente no Colab com o link abaixo:
 
 - [Uniformidade do filamento – Abrir no Colab](https://drive.google.com/...)  
 - [Fusão entre filamentos – Abrir no Colab](https://drive.google.com/...)  
-- [Printabilidade geral – Abrir no Colab]([https://drive.google.com/file/d/1RcS2LCAAKrUpp4An5tR5Z0VFSuYrJcdr/view?usp=drive_link](https://colab.research.google.com/drive/1fj3Lq4Kldte4dZBxzvhAABXbBwRNgMIu?usp=sharing))
+- [Printabilidade geral – Abrir no Colab](https://colab.research.google.com/drive/1fj3Lq4Kldte4dZBxzvhAABXbBwRNgMIu?usp=sharing)
 
 Permite:
 - Fazer o upload da imagem da amostra
