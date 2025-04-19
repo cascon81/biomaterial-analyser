@@ -6,7 +6,7 @@ Este projeto fornece um sistema de **análise automática de imagens de biomater
 
 ## O que o sistema analisa?
 
-Três tipos de análises estão disponíveis, cada uma com seu próprio modelo `.h5`:
+Três tipos de análises estão disponíveis, cada uma com seu próprio modelo `.h5` e `.keras`:
 
 - **Uniformidade do filamento**  
 - **Fusão entre filamentos**  
