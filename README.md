@@ -1,6 +1,6 @@
 # 🧪 Biomaterial Analyser
 
-Este projeto fornece um sistema de **análise automática de imagens de biomateriais impressos em 3D** utilizando **modelos de regressão treinados com TensorFlow/Keras**. O sistema é executado via **Google Colab**, com interface simples e intuitiva para carregar imagens e obter resultados.
+Este projeto fornece um sistema de **análise automática de imagens de biomateriais impressos em 3D** utilizando **modelos de rede neural convolucional (CNN) treinados para regressão com TensorFlow/Keras**. O sistema é executado via **Google Colab**, com interface simples e intuitiva para carregar imagens e obter resultados.
 
 ---
 
