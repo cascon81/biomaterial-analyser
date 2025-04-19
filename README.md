@@ -45,6 +45,6 @@ Os modelos foram treinados usando imagens rotuladas com valores contínuos (regr
 
 - [Uniformidade do filamento – Download modelo `.h5`](https://drive.google.com/...)  
 - [Fusão entre filamentos – Download modelo `.h5`](https://drive.google.com/...)  
-- [Printabilidade geral – Download modelo `.h5`](https://drive.google.com/file/d/1RcS2LCAAKrUpp4An5tR5Z0VFSuYrJcdr/view?usp=drive_link)
+- [Printabilidade geral – Download modelo `.h5`](https://drive.google.com/drive/folders/1cFIDD61-nRLunhnHf91oDYkNiv9yHJ5a?usp=sharing)
 
 
