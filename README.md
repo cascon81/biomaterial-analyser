@@ -56,9 +56,25 @@ Deseja avaliar a performance da sua impressora?
 
 ---
 
-## 🤝 Contribuições
+## 🔁 Evolução do Modelo
 
-Contribuições são bem-vindas! Abra uma issue com sugestões ou envie um pull request com melhorias, novos modelos ou métricas.
+O sistema foi desenvolvido para ser **modular e adaptável**. Com isso, você pode:
+
+- **Rotular automaticamente novas imagens** de amostras, enviando pastas com imagens de materiais diferentes.
+- **Treinar novamente os modelos** com imagens de **outros materiais ou configurações de impressão**.
+- **Aprimorar a especialização** do modelo em um tipo de falha, material ou equipamento específico.
+- **Criar novas métricas ou adaptações** para sua própria realidade.
+
+> **Como funciona**: Se você enviar 30 imagens de materiais diferentes, o modelo irá rotulá-las automaticamente. Essas imagens rotuladas podem ser usadas para **criar um novo modelo especializado** ou para **refinar o modelo existente** para que ele se torne mais eficiente em reconhecer o material específico.
+
+> **Exemplo**: Se você enviar 30 imagens de amostras feitas com **PLA**, o modelo rotulará essas imagens. Essas imagens rotuladas podem ser usadas para **treinar um modelo mais preciso para PLA** ou **melhorar o modelo atual** para tornar a análise de PLA mais eficiente.
+
+> Com mais exemplos e ajustes finos, o modelo pode se tornar um **verdadeiro especialista** em **avaliar impressões de seu processo ou material específico**.
+
+Se desejar manter suas melhorias privadas ou compartilhá-las com a comunidade, você pode:
+- Fazer um **fork** (uma cópia do projeto para sua conta no GitHub)
+- Alterar os modelos, notebooks ou dados
+- Enviar um **pull request** com suas melhorias
 
 ---
 
