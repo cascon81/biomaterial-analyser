@@ -6,7 +6,6 @@ Inclui neste repositório:
 
 - ✅ **Modelos `.keras`** treinados e prontos para uso
 - 🧠 **Notebooks `.ipynb`** com todo o código necessário para rodar os modelos  
-  *(basta abrir o `.ipynb` no GitHub e clicar em "Abrir no Colab")*
 - 📸 **Imagens de referência** das amostras já impressas, para você testar os modelos com exemplos reais
 - 🖨️ **Arquivos `.stl`** para impressão das amostras de teste
 
