@@ -20,9 +20,9 @@ Cada métrica tem um modelo, uma imagem de referência e uma geometria `.stl` de
 
 | Métrica                    | Modelo (.keras)        | Imagem de amostra (.jpg)    | Geometria de teste (.stl)      |
 |---------------------------|------------------------|------------------------------|--------------------------------|
-| **Uniformidade do filamento** | [modelo_uniformidade.keras]() | [sample_uniformidade.jpg]()     | [uniformidade_teste.stl]()      |
-| **Fusão entre filamentos**   | [modelo_fusao.keras]()        | [sample_fusao.jpg]()            | [fusao_teste.stl]()             |
-| **Printabilidade geral**     | [modelo_printabilidade.keras]() | [sample_printabilidade.jpg]()   | [printabilidade_teste.stl]()    |
+| **Uniformidade do filamento** | [uniformidade.keras]() | [uniformidade.jpg]()     | [uniformidade.stl]()      |
+| **Fusão entre filamentos**   | [fusao.keras]()        | [fusao.jpg]()            | [fusao.stl]()             |
+| **Printabilidade geral**     | [printabilidade.keras]() | [printabilidade.jpg]()   | [printabilidade.stl]()    |
 
 ---
 
