@@ -16,7 +16,7 @@ Inclui neste repositório:
 
 ## 📊 Análises disponíveis
 
-Cada métrica tem um modelo, uma imagem de referência e uma geometria `.stl` dedicada para testes:
+Cada métrica tem um modelo e uma geometria `.stl` dedicada para testes:
 
 | Métrica                    | Modelo (.keras)        | Imagem de amostra (.jpg)    | Geometria de teste (.stl)      |
 |---------------------------|------------------------|------------------------------|--------------------------------|
