@@ -17,7 +17,7 @@ Inclui neste repositório:
 
 Cada métrica tem um modelo e uma geometria `.stl` dedicada para testes:
 
-| Métrica                    | Modelo (.keras)        | Imagem de amostra (.jpg)    | Geometria de teste (.stl)      |
+| Métrica                    | Modelo (.keras)        | Imagem de referência (.jpg)    | Geometria de teste (.stl)      |
 |---------------------------|------------------------|------------------------------|--------------------------------|
 | **Uniformidade do filamento** | [uniformidade.keras]() | [uniformidade.jpg]()     | [uniformidade.stl]()      |
 | **Fusão entre filamentos**   | [fusao.keras]()        | [fusao.jpg]()            | [fusao.stl]()             |
@@ -30,7 +30,7 @@ Cada métrica tem um modelo e uma geometria `.stl` dedicada para testes:
 1. Abra o arquivo `.ipynb` correspondente no GitHub.
 2. Clique em **"Abrir no Colab"** (aparece automaticamente no topo da visualização do notebook).
 3. Execute as células do notebook – o modelo será carregado automaticamente.
-4. Faça upload da **imagem de amostra** incluída no repositório para simular a predição.
+4. Faça upload da **imagem de referência** incluída no repositório para simular a predição.
 
 > Você também pode usar **suas próprias imagens** de peças impressas seguindo as orientações abaixo.
 
