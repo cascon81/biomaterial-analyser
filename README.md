@@ -7,9 +7,8 @@ Inclui neste repositório:
 - ✅ **Modelos `.keras`** treinados e prontos para uso
 - 🧠 **Notebooks `.ipynb`** com todo o código necessário para rodar os modelos  
   *(basta abrir no GitHub e clicar em "Abrir no Colab")*
-- 🖨️ **Arquivos `.stl`** para impressão das amostras de teste
 - 📸 **Imagens de referência** das amostras já impressas, para você testar os modelos com exemplos reais
-
+- 🖨️ **Arquivos `.stl`** para impressão das amostras de teste
 
 > ⚠️ Embora desenvolvido para biomateriais, o sistema também funciona com outros filamentos como **ABS**, **PLA**, **PETG**, entre outros.
 
@@ -34,7 +33,7 @@ Cada métrica tem um modelo, uma imagem de referência e uma geometria `.stl` de
 3. Execute as células do notebook – o modelo será carregado automaticamente.
 4. Faça upload da **imagem de amostra** incluída no repositório para simular a predição.
 
-Você também pode usar **suas próprias imagens** de peças impressas seguindo as orientações abaixo.
+> Você também pode usar **suas próprias imagens** de peças impressas seguindo as orientações abaixo.
 
 ---
 
