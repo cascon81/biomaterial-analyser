@@ -67,17 +67,6 @@ O sistema foi desenvolvido para ser **modular e adaptável**. Com isso, você po
 
 > **Como funciona**: Se você enviar 30 imagens de materiais diferentes, o modelo irá rotulá-las automaticamente. Essas imagens rotuladas podem ser usadas para **criar um novo modelo especializado** ou para **refinar o modelo existente** para que ele se torne mais eficiente em reconhecer o material específico.
 
-> **Exemplo**: Se você enviar 30 imagens de amostras feitas com **PLA**, o modelo rotulará essas imagens. Essas imagens rotuladas podem ser usadas para **treinar um modelo mais preciso para PLA** ou **melhorar o modelo atual** para tornar a análise de PLA mais eficiente.
-
 > Com mais exemplos e ajustes finos, o modelo pode se tornar um **verdadeiro especialista** em **avaliar impressões de seu processo ou material específico**.
 
-Se desejar manter suas melhorias privadas ou compartilhá-las com a comunidade, você pode:
-- Fazer um **fork** (uma cópia do projeto para sua conta no GitHub)
-- Alterar os modelos, notebooks ou dados
-- Enviar um **pull request** com suas melhorias
-
 ---
-
-## 📝 Licença
-
-Este projeto está licenciado sob a [MIT License](LICENSE).
