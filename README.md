@@ -67,7 +67,7 @@ O sistema foi desenvolvido para ser **modular e adaptável**. Com isso, você po
 - **Aprimorar a especialização** do modelo em um tipo de falha, material ou equipamento específico.
 - **Criar novas métricas ou adaptações** para sua própria realidade.
 
-> **Como funciona**: Se você enviar 30 imagens de materiais diferentes, o modelo irá rotulá-las automaticamente. Essas imagens rotuladas podem ser usadas para **criar um novo modelo especializado** ou para **refinar o modelo existente** para que ele se torne mais eficiente em reconhecer o material específico.
+> **Como funciona**: Se você enviar algumas imagens de materiais diferentes, o modelo irá rotulá-las automaticamente. Essas imagens rotuladas podem ser usadas para **criar um novo modelo especializado** ou para **refinar o modelo existente** para que ele se torne mais eficiente em reconhecer o material específico.
 
 > Com mais exemplos e ajustes finos, o modelo pode se tornar um **verdadeiro especialista** em **avaliar impressões de seu processo ou material específico**.
 
