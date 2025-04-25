@@ -1,7 +1,6 @@
 # 🧪 Biomaterial Analyser
 
-Este projeto fornece um sistema de análise automática de imagens de biomateriais impressos em 3D, utilizando redes neurais convolucionais (CNNs) para regressão com TensorFlow/Keras.  
-Os modelos `.keras`, notebooks `.ipynb` e arquivos de geometria `.stl` estão todos incluídos neste repositório.
+Este projeto fornece um sistema de análise automática de imagens de biomateriais impressos em 3D, utilizando redes neurais convolucionais (CNNs) para regressão com TensorFlow/Keras. Os modelos `.keras`, notebooks `.ipynb` e arquivos de geometria `.stl` estão todos incluídos neste repositório.
 
 > ℹ️ **Observação:** Embora o foco seja em biomateriais, os modelos também funcionam para outros materiais comuns de impressão 3D, como **ABS**, **PLA**, **PETG**, entre outros.
 
