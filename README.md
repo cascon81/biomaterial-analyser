@@ -4,9 +4,10 @@ Este projeto fornece um sistema de **análise automática de imagens de biomater
 
 ## 📦 Conteúdo deste repositório
 
-- ✅ **Modelos `.keras`** prontos para uso (opcional)
+- ✅ **Modelos `.keras` e `.h5`** prontos para uso (opcional)
 - 🧠 **Notebooks `.ipynb`** com todo o código necessário para rodar as análises
 - 📸 **Imagens de referência** para testes com exemplos reais
+- 🏷️ **Labels** para auxiliar no treinamento e validação dos modelos
 - 🖨️ **Arquivos `.stl`** para impressão das geometrias de teste (opcional)
 
 > ⚠️ Embora desenvolvido para biomateriais, o sistema também é compatível com filamentos como **ABS**, **PLA**, **PETG**, entre outros.
@@ -15,8 +16,7 @@ Este projeto fornece um sistema de **análise automática de imagens de biomater
 
 ## 📊 Análises disponíveis
 
-Cada métrica possui uma imagem de referência (`.png`) e, opcionalmente, um modelo (`.keras`) e uma geometria de teste (`.stl`).  
-Esses arquivos estão organizados por métrica nas pastas abaixo:
+Cada métrica possui uma imagem de referência (`.png`) e, opcionalmente, um modelo (`.keras` ou `.h5`), labels e uma geometria de teste (`.stl`). Esses arquivos estão organizados por métrica nas pastas abaixo:
 
 | Métrica                   | Pasta com os Arquivos |
 |---------------------------|------------------------|
@@ -26,10 +26,11 @@ Esses arquivos estão organizados por métrica nas pastas abaixo:
 
 > 📁 Cada pasta contém:
 > - Imagem de referência (`.png`)  
-> - Modelo de predição (`.keras`) – **opcional**  
-> - Geometria de teste (`.stl`) – **opcional**
+> - Modelo de predição (`.keras` ou `.h5`) – **opcional**  
+> - Geometria de teste (`.stl`) – **opcional**  
+> - Labels (`.csv` ou `.json`) – **opcional**
 
-> 💡 **Você só precisa do `.keras` se for rodar localmente. No Colab, ele é carregado automaticamente.**  
+> 💡 **Você só precisa do `.keras` ou `.h5` se for rodar localmente. No Colab, ele é carregado automaticamente.**  
 > Use o `.stl` apenas se quiser **testar a sua própria impressora 3D**.
 
 ---
@@ -37,9 +38,10 @@ Esses arquivos estão organizados por métrica nas pastas abaixo:
 ## 🚀 Como testar os modelos no Google Colab
 
 1. Abra o arquivo `.ipynb` correspondente neste repositório.
-2. Clique em **“Abrir no Colab”** (botão exibido automaticamente no topo).
-3. Execute as células – o modelo será carregado automaticamente.
-4. Faça upload da **imagem de referência** ou de **sua própria imagem** para realizar a predição.
+2. Ao abrir o arquivo `.ipynb`, você verá um exemplo de execução que foi rodado por mim, com as imagens de teste incluídas no repositório.
+3. Clique em **“Abrir no Colab”** (botão exibido automaticamente no topo).
+4. Execute as células – o modelo será carregado automaticamente.
+5. Você pode rodar a análise com uma imagem da pasta de imagens de referência ou **fazer upload da sua própria imagem** para realizar a predição.
 
 ---
 
@@ -74,5 +76,3 @@ O sistema foi desenvolvido para ser **modular e adaptável**. Com isso, você po
 ## 📝 Licença
 
 Este projeto está licenciado sob a [MIT License](LICENSE).
-
----
