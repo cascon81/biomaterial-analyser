@@ -17,11 +17,11 @@ Inclui neste repositório:
 
 Cada métrica tem um modelo e uma geometria `.stl` dedicada para testes:
 
-| Métrica                    | Modelo (.keras)        | Imagem de referência (.jpg)    | Geometria de teste (.stl)      |
+| Métrica                    | Modelo (.keras)        | Imagem de referência (.png)    | Geometria de teste (.stl)      |
 |---------------------------|------------------------|------------------------------|--------------------------------|
-| **Uniformidade do filamento** | [uniformidade.keras]() | [uniformidade.jpg]()     | [uniformidade.stl]()      |
-| **Fusão entre filamentos**   | [fusao.keras]()        | [fusao.jpg]()            | [fusao.stl]()             |
-| **Printabilidade geral**     | [printabilidade.keras]() | [printabilidade.jpg]()   | [printabilidade.stl]()    |
+| **Uniformidade do filamento** | [uniformidade.keras]() | [uniformidade.png]()     | [uniformidade.stl]()      |
+| **Fusão entre filamentos**   | [fusao.keras]()        | [fusao.png]()            | [fusao.stl]()             |
+| **Printabilidade geral**     | [printabilidade.keras]() | [printabilidade.png]()   | [printabilidade.stl]()    |
 
 ---
 
