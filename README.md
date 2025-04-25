@@ -70,3 +70,9 @@ O sistema foi desenvolvido para ser **modular e adaptável**. Com isso, você po
 > Com mais exemplos e ajustes finos, o modelo pode se tornar um **verdadeiro especialista** em **avaliar impressões de seu processo ou material específico**.
 
 ---
+
+## 📝 Licença
+
+Este projeto está licenciado sob a [MIT License](LICENSE).
+
+---
