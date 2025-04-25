@@ -1,50 +1,47 @@
 # 🧪 Biomaterial Analyser
 
-Este projeto fornece um sistema de **análise automática de imagens de biomateriais impressos em 3D** utilizando **modelos de rede neural convolucional (CNN) treinados para regressão com TensorFlow/Keras**. O sistema é executado via **Google Colab**, com interface simples e intuitiva para carregar imagens e obter resultados.
+Este projeto fornece um sistema de análise automática de imagens de biomateriais impressos em 3D, utilizando redes neurais convolucionais (CNNs) para regressão com TensorFlow/Keras.  
+Os modelos `.keras`, notebooks `.ipynb` e arquivos de geometria `.stl` estão todos incluídos neste repositório.
+
+> ℹ️ **Observação:** Embora o foco seja em biomateriais, os modelos também funcionam para outros materiais comuns de impressão 3D, como **ABS**, **PLA**, **PETG**, entre outros.
 
 ---
 
-## O que o sistema analisa?
+## 📊 Análises disponíveis
 
-Três tipos de análises estão disponíveis, cada uma com seu próprio modelo `.keras`:
+Cada métrica possui:
+- Um modelo `.keras` treinado com imagens reais
+- Um notebook `.ipynb` para execução no Google Colab
+- Um arquivo `.stl` com geometria específica de teste
+- Uma imagem de amostra para referência
 
-- **Uniformidade do filamento**  
-- **Fusão entre filamentos**  
-- **Printabilidade geral**
+| Métrica                     | Notebook (.ipynb)             | Modelo + Imagem (.keras)                        | Geometria de Teste (.stl)         |
+|----------------------------|-------------------------------|-------------------------------------------------|------------------------------------|
+| **Uniformidade do filamento** | `uniformidade_filamento.ipynb` | `modelo_uniformidade.keras` + `sample_uniformidade.jpg` | `uniformidade_teste.stl` |
+| **Fusão entre filamentos**   | `fusao_filamentos.ipynb`        | `modelo_fusao.keras` + `sample_fusao.jpg`         | `fusao_teste.stl`         |
+| **Printabilidade geral**     | `printabilidade_geral.ipynb`     | `modelo_printabilidade.keras` + `sample_printabilidade.jpg` | `printabilidade_teste.stl` |
 
-Cada análise utiliza uma **geometria de amostra específica** com GCode dedicado, projetada para destacar as características visuais mais relevantes de cada métrica.
+---
 
+## 🚀 Como usar
 
-## 💻 Executar no Google Colab
+1. Abra o notebook correspondente no Google Colab.
+2. Faça upload da imagem da amostra impressa (semelhante à imagem exemplo).
+3. Execute o modelo para obter o resultado da análise.
 
-Abra e execute diretamente no Colab com o link abaixo:
+> ⚠️ **Atenção:** utilize a geometria `.stl` correspondente a cada análise para garantir resultados confiáveis.
 
-- [Uniformidade do filamento – Abrir no Colab](https://drive.google.com/...)  
-- [Fusão entre filamentos – Abrir no Colab](https://drive.google.com/...)  
-- [Printabilidade geral – Abrir no Colab](https://colab.research.google.com/drive/1fj3Lq4Kldte4dZBxzvhAABXbBwRNgMIu?usp=sharing)
+---
 
-Permite:
-- Fazer o upload da imagem da amostra
-- Executar a predição
+## 🧩 Teste sua impressora 3D
 
+Quer verificar a performance da sua impressora 3D?
 
-## 📐 GCodes de Teste
+- Baixe o arquivo `.stl` da análise desejada
+- Imprima a amostra com seu material preferido
+- Fotografe de forma semelhante à imagem de exemplo
+- Submeta a imagem no notebook correspondente
 
-Para garantir a análise correta, utilize as amostras de teste correspondentes a cada modelo:
+Compare os resultados com o desempenho ideal esperado!
 
-- [Amostra de Uniformidade – GCODE](https://drive.google.com/...)  
-- [Amostra de Fusão – GCODE](https://drive.google.com/...)  
-- [Amostra de Printabilidade – GCODE](https://drive.google.com/...)
-
-Essas geometrias foram projetadas para evidenciar visualmente as métricas que os modelos analisam.
-
-
-## 🧠 Modelos Treinados (TensorFlow/Keras)
-
-Os modelos foram treinados usando imagens rotuladas com valores contínuos (regressão).
-
-- [Uniformidade do filamento – Download modelo `.keras`](https://drive.google.com/...)  
-- [Fusão entre filamentos – Download modelo `.keras`](https://drive.google.com/...)  
-- [Printabilidade geral – Download modelo `.keras`](https://drive.google.com/drive/folders/1cFIDD61-nRLunhnHf91oDYkNiv9yHJ5a?usp=sharing)
-
-
+---
