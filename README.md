@@ -31,4 +31,4 @@ Este é um projeto de prova de conceito, baseado em imagens de um artigo cientí
 
 ## Licença
 
-[MIT License.](https://mit-license.org/)
+> [MIT License.](https://mit-license.org/)
