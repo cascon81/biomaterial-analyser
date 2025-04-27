@@ -1,78 +1,32 @@
-# 🧪 Biomaterial Analyser
+# Análise de Printabilidade de Biomateriais - Prova de Conceito
 
-Este projeto fornece um sistema de **análise automática de imagens de biomateriais impressos em 3D**, utilizando redes neurais convolucionais (CNNs) com TensorFlow/Keras para prever métricas de qualidade.
+Este projeto tem como objetivo prever automaticamente o "printabilidade score" de amostras de biomateriais impressos em 3D a partir de imagens, utilizando redes neurais convolucionais (CNNs) com TensorFlow/Keras.
 
-## 📦 Conteúdo deste repositório
+## Como usar
 
-- ✅ **Modelos `.keras` e `.h5`** prontos para uso (opcional)
-- 🧠 **Notebooks `.ipynb`** com todo o código necessário para rodar as análises
-- 📸 **Imagens de referência** para testes com exemplos reais
-- 🏷️ **Labels** para auxiliar no treinamento e validação dos modelos
-- 🖨️ **Arquivos `.stl`** para impressão das geometrias de teste (opcional)
+### 1. Acesse o Google Colab
 
-> ⚠️ Embora desenvolvido para biomateriais, o sistema também é compatível com filamentos como **ABS**, **PLA**, **PETG**, entre outros.
+Clique no link abaixo para abrir o notebook de análise:
 
----
+> [🔗 Abrir no Google Colab](https://colab.research.google.com/drive/LINK_DO_SEU_NOTEBOOK_AQUI)
 
-## 📊 Análises disponíveis
+### 2. Execute o notebook
 
-Cada métrica possui uma imagem de referência (`.png`) e, opcionalmente, um modelo (`.keras` ou `.h5`), labels e uma geometria de teste (`.stl`). Esses arquivos estão organizados por métrica nas pastas abaixo:
+Ao executar o notebook, ele realizará automaticamente as seguintes etapas:
 
-| Métrica                   | Pasta com os Arquivos |
-|---------------------------|------------------------|
-| **Uniformidade do filamento** | [🔗 Acessar pasta](https://exemplo.com/uniformidade) |
-| **Fusão entre filamentos**    | [🔗 Acessar pasta](https://exemplo.com/fusao)        |
-| **Printabilidade geral**      | [🔗 Acessar pasta](https://exemplo.com/printabilidade) |
+- Carregará o modelo de previsão treinado diretamente do Google Colab.
+- A imagem de exemplo será carregada automaticamente para o teste.
+- O "printabilidade score" da imagem de exemplo será calculado e exibido.
+- Ao final da execução, o modelo treinado será salvo como um arquivo `.keras` e a imagem de exemplo estará disponível no formato `.png`, ambos no Colab. Caso queira, você pode baixar esses arquivos para o seu computador.
 
-> 📁 Cada pasta contém:
-> - Imagem de referência (`.png`)  
-> - Modelo de predição (`.keras` ou `.h5`) – **opcional**  
-> - Geometria de teste (`.stl`) – **opcional**  
-> - Labels (`.csv` ou `.json`) – **opcional**
+### 3. Acesse o código no GitHub
 
-> 💡 **Você só precisa do `.keras` ou `.h5` se for rodar localmente. No Colab, ele é carregado automaticamente.**  
-> Use o `.stl` apenas se quiser **testar a sua própria impressora 3D**.
+O código utilizado para treinar o modelo está disponível neste repositório GitHub como um notebook `.ipynb`. Esse notebook contém todo o processo de treinamento do modelo, incluindo a criação da rede neural convolucional, treinamento e avaliação. Você poderá visualizar os resultados do treinamento, como gráficos de avaliação do modelo, e entender como o modelo foi otimizado.
 
----
+## Observação
 
-## 🚀 Como testar os modelos no Google Colab
+Este é um projeto de prova de conceito, baseado em imagens de um artigo científico. Futuramente, amostras reais de biomateriais, como acetato de celulose, serão utilizadas para treinar um modelo mais especializado.
 
-1. Abra o arquivo `.ipynb` correspondente neste repositório.
-2. Ao abrir o arquivo `.ipynb`, você verá um exemplo de execução que foi rodado por mim, com as imagens de teste incluídas no repositório.
-3. Clique em **“Abrir no Colab”** (botão exibido automaticamente no topo).
-4. Execute as células – o modelo será carregado automaticamente.
-5. Você pode rodar a análise com uma imagem da pasta de imagens de referência ou **fazer upload da sua própria imagem** para realizar a predição.
+## Licença
 
----
-
-## 🧩 Teste sua impressora 3D (opcional)
-
-Deseja avaliar a performance da sua impressora?
-
-1. Escolha uma métrica e baixe o `.stl` correspondente.
-2. Imprima a amostra com o material desejado.
-3. Fotografe a peça em boa iluminação, em ângulo semelhante à imagem de referência.
-4. Use o notebook para analisar a imagem.
-
-> 📌 Os arquivos `.stl` foram projetados para realçar os aspectos específicos de cada métrica. Usá-los garante previsões mais alinhadas ao treinamento do modelo.
-
----
-
-## 🔁 Evolução do Modelo
-
-O sistema foi desenvolvido para ser **modular e adaptável**. Com isso, você pode:
-
-- **Rotular automaticamente novas imagens** de amostras, enviando pastas com imagens de materiais diferentes.
-- **Treinar novamente os modelos** com imagens de **outros materiais ou configurações de impressão**.
-- **Aprimorar a especialização** do modelo em um tipo de falha, material ou equipamento específico.
-- **Criar novas métricas ou adaptações** para sua própria realidade.
-
-> **Como funciona**: Se você enviar algumas imagens de materiais diferentes, o modelo irá rotulá-las automaticamente. Essas imagens rotuladas podem ser usadas para **criar um novo modelo especializado** ou para **refinar o modelo existente** para que ele se torne mais eficiente em reconhecer o material específico.
-
-> Com mais exemplos e ajustes finos, o modelo pode se tornar um **verdadeiro especialista** em **avaliar impressões de seu processo ou material específico**.
-
----
-
-## 📝 Licença
-
-Este projeto está licenciado sob a [MIT License](LICENSE).
+MIT License.
