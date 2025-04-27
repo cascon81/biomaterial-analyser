@@ -23,7 +23,7 @@ Ao executar o notebook, ele realizará automaticamente as seguintes etapas:
 
 ### 3. Acesso ao código completo para criação e treinamento do modelo no GitHub
 
-O código utilizado para criar e treinar o modelo está disponível neste repositório GitHub, em formato de notebook .ipynb. Este notebook contém todas as etapas do processo, incluindo a criação da arquitetura da rede neural convolucional, o treinamento e a avaliação do modelo. Ao acessar o código, você poderá visualizar os resultados do treinamento, como gráficos de desempenho.
+O código utilizado para criar e treinar o modelo está disponível neste repositório GitHub, em formato de notebook `.ipynb`. Este notebook contém todas as etapas do processo, incluindo a criação da arquitetura da rede neural convolucional, o treinamento e a avaliação do modelo. Ao acessar o código, você poderá visualizar os resultados do treinamento, como gráficos de desempenho.
 
 ## Observação
 
