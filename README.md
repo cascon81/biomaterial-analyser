@@ -1,6 +1,8 @@
 # Análise de Printabilidade de Biomateriais - Prova de Conceito
 
-Este projeto tem como objetivo prever automaticamente o "printabilidade score" de amostras de biomateriais impressos em 3D a partir de imagens, utilizando redes neurais convolucionais (CNNs) com TensorFlow/Keras.
+Este projeto tem como objetivo prever automaticamente o "printabilidade score" de amostras de biomateriais impressos em 3D a partir de imagens, utilizando redes neurais convolucionais (CNNs) com TensorFlow/Keras. O modelo foi treinado com imagens de biomateriais como Alginate + CaCl2, GelMA, Nivea e Pluronic F-127, e também se baseia no artigo:
+
+> CORDOVA, Domenic J. et al. *The Enderstruder: An accessible open-source syringe extruder compatible with Ender series 3D printers*. HardwareX, v. 17, p. e00510, 2024.
 
 ## Como usar
 
@@ -19,7 +21,7 @@ Ao executar o notebook, ele realizará automaticamente as seguintes etapas:
 - O "printabilidade score" da imagem de exemplo será calculado e exibido.
 - Ao final da execução, o modelo treinado será salvo como um arquivo `.keras` e a imagem de exemplo estará disponível no formato `.png`, ambos no Colab. Caso queira, você pode baixar esses arquivos para o seu computador.
 
-### 3. 3. Acesso ao código completo para criação e treinamento do modelo no GitHub
+### 3. Acesso ao código completo para criação e treinamento do modelo no GitHub
 
 O código utilizado para criar e treinar o modelo está disponível neste repositório GitHub, em formato de notebook .ipynb. Este notebook contém todas as etapas do processo, incluindo a criação da arquitetura da rede neural convolucional, o treinamento e a avaliação do modelo. Ao acessar o código, você poderá visualizar os resultados do treinamento, como gráficos de desempenho.
 
