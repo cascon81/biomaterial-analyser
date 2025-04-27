@@ -19,9 +19,9 @@ Ao executar o notebook, ele realizará automaticamente as seguintes etapas:
 - O "printabilidade score" da imagem de exemplo será calculado e exibido.
 - Ao final da execução, o modelo treinado será salvo como um arquivo `.keras` e a imagem de exemplo estará disponível no formato `.png`, ambos no Colab. Caso queira, você pode baixar esses arquivos para o seu computador.
 
-### 3. Acesse o código no GitHub
+### 3. 3. Acesso ao código completo para criação e treinamento do modelo no GitHub
 
-O código utilizado para treinar o modelo está disponível neste repositório GitHub como um notebook `.ipynb`. Esse notebook contém todo o processo de treinamento do modelo, incluindo a criação da rede neural convolucional, treinamento e avaliação. Você poderá visualizar os resultados do treinamento, como gráficos de avaliação do modelo, e entender como o modelo foi otimizado.
+O código utilizado para criar e treinar o modelo está disponível neste repositório GitHub, em formato de notebook .ipynb. Este notebook contém todas as etapas do processo, incluindo a criação da arquitetura da rede neural convolucional, o treinamento e a avaliação do modelo. Ao acessar o código, você poderá visualizar os resultados do treinamento, como gráficos de desempenho.
 
 ## Observação
 
