@@ -8,7 +8,7 @@ Este projeto tem como objetivo prever automaticamente o "printabilidade score" d
 
 Clique no link abaixo para abrir o notebook de análise:
 
-> [🔗 Abrir no Google Colab](https://colab.research.google.com/drive/LINK_DO_SEU_NOTEBOOK_AQUI)
+> [🔗 Abrir no Google Colab](https://colab.research.google.com/drive/1fj3Lq4Kldte4dZBxzvhAABXbBwRNgMIu?usp=sharing)
 
 ### 2. Execute o notebook
 
